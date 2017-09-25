@@ -66,7 +66,6 @@ public class VirtualPet {
 		thirst -= 5;
 	}
 	
-	@Override
 	public String toString() {
 		return (name + " " + description); 
 	}
