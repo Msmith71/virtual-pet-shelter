@@ -26,14 +26,12 @@ public class VirtualPetShelter {
 		petShelter.remove(pet.name);
 	}
 	
-	
 	// Basic needs
 	public void feedPets(){
 		for(VirtualPet currentPet: pets()){
 			currentPet.feed();
 		}
 	}
-	
 	public void feedPet(String name){
 		getPet(name).feed();
 	}
@@ -43,10 +41,16 @@ public class VirtualPetShelter {
 			currentPet.drink();
 		}
 	}
+	
 	public void playWith(String name){
 		getPet(name).play();
 	}
 	
+	public void playAll(){
+		for(VirtualPet currentPet: pets()){
+			currentPet.play();
+		}
+	}
 	
 	// Update stats
 	public void tick() {

@@ -12,7 +12,7 @@ public class VirtualPetShelterApp {
 
 		// random starting pet names | description | stats
 		String rndPNames [] = {"Penny", "Beezle", "Jaeger", "Billy", "Scotty", "Selene", "Mitth", "Buddy", "Tiber","Jim", "Kelly", "Jade", "Amber", "Mordecai", "Gordon"}; 
-		String rndPDesc [] = {"is distracted by a bee.", "looks like they're having a great time!", "is feeling lazy today.", "is excited today.", "wants a new toy.", "looks a little down.", "looks happy to see you.", "is rolling around in the dirt."}; 
+		String rndPDesc [] = {"is distracted by a bee.", "looks like they're having a great time!", "is feeling lazy today.", "is excited today.", "wants a new toy.", "looks a little down.", "looks happy to see you.", "is rolling around in the dirt.", "is chewing on toy.", "is giving you a puzzled look.", "is licking themself.", "looks agitated and scared.", "is fighting with another pet."}; 
 		int rndStat [] = {21,45,25,73,67,88,71,49,42,37,10,100,1,20,57,94,60,50,40,30,17,9};
 		
 		
@@ -32,8 +32,9 @@ public class VirtualPetShelterApp {
 		
 		boolean end = false;
 		
+		System.out.println("\nWelcome to the Pet Emporium: Shelter and Care Centre! Thank you helping out today!");
+		
 		do {
-			System.out.println("\nThank you for volunteering at the Pet Emporium Shelter and Care Centre!");
 			System.out.println("\nCurrent status of all pets are: ");
 			System.out.println("\nName\t|Hunger\t|Thirst\t|Mood");
 			System.out.println("-------------------------------");
@@ -44,24 +45,30 @@ public class VirtualPetShelterApp {
 			}
 			
 			System.out.println("\nWhat would you like to do next?");
-			System.out.println("\n1. Feed the pets \n2. Water the pets \n3. Feed a pet \n4. Play with a pet \n5. Adopt a pet \n6. Admit a pet \n7. Do nothing \n8. Quit");
+			System.out.println("\n1. Feed all pets \n2. Water all pets \n3. Feed a single pet \n4. Feed a single pet \n5. Play with a pet \n6. Adopt a pet \n7. Admit a pet \n8. Do nothing \n9. Quit :(");
 			String response = input.nextLine();
 			switch (response) {
 			
-			// feed
+			// feed all
 			case "1": 
 	 			shelter.feedPets();
 				System.out.println("You have fed all of the pets.");
 				break;
 				
-			// water	
+			// water all
 			case "2": 
 				shelter.waterPets();
-				System.out.println("You have given water to pets.");
+				System.out.println("You have given water to all pets.");
+				break;
+				
+			// play all
+			case "3": 
+				shelter.playAll();
+				System.out.println("You have a grand ole time with all the pets.");
 				break;
 				
 			// feed individual pet
-			case "3":
+			case "4":
 				System.out.println("Please enter the name of the pet you would like to feed:");
 				System.out.println();
 				showPets(shelter);
@@ -71,7 +78,7 @@ public class VirtualPetShelterApp {
 				break;
 				
 			// play
-			case "4": 
+			case "5": 
 				System.out.println("Please enter the name of the pet you want to play with:");
 				System.out.println();
 				showPets(shelter);
@@ -81,7 +88,7 @@ public class VirtualPetShelterApp {
 				break;
 				
 			// adopt	
-			case "5": 
+			case "6": 
 				System.out.println("Which pet are you interested in adopting?");
 				showPets(shelter);
 				String petAdopt = input.nextLine();
@@ -91,7 +98,7 @@ public class VirtualPetShelterApp {
 				break;
 				
 			// bring in new pet
-			case "6": 
+			case "7": 
 				System.out.println("Please enter the name of the new pet: ");
 				String name = input.nextLine();
 				System.out.println("Please enter the descritpion of the new pet: ");
@@ -102,12 +109,12 @@ public class VirtualPetShelterApp {
 				break;
 				
 			// do nothing
-			case "7": 
+			case "8": 
 				break;
 				
 			// quit
-			case "8": 
-				System.out.println("Be sure to stop by to volunteer again!");
+			case "9": 
+				System.out.println("Be sure to stop by and volunteer again!");
 				System.exit(0);
 			
 			default:
