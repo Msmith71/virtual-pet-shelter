@@ -33,6 +33,11 @@ public class VirtualPetShelter {
 			currentPet.feed();
 		}
 	}
+	
+	public void feedPet(String name){
+		getPet(name).feed();
+	}
+	
 	public void waterPets(){
 		for(VirtualPet currentPet: pets()){
 			currentPet.drink();

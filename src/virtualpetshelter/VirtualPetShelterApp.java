@@ -11,9 +11,9 @@ public class VirtualPetShelterApp {
 		VirtualPetShelter shelter = new VirtualPetShelter();
 
 		// random starting pet names | description | stats
-		String rndPNames [] = {"Penny", "Beezle", "Jaeger", "Billy", "Scotty", "Selene", "Mitth", "Buddy", "Tiber"}; 
+		String rndPNames [] = {"Penny", "Beezle", "Jaeger", "Billy", "Scotty", "Selene", "Mitth", "Buddy", "Tiber","Jim", "Kelly", "Jade", "Amber", "Mordecai", "Gordon"}; 
 		String rndPDesc [] = {"is distracted by a bee.", "looks like they're having a great time!", "is feeling lazy today.", "is excited today.", "wants a new toy.", "looks a little down.", "looks happy to see you.", "is rolling around in the dirt."}; 
-		int rndStat [] = {21,45,25,73,67,88,71,49,42,37,10,100,1,20,57,94,60,50,40,30,20,9};
+		int rndStat [] = {21,45,25,73,67,88,71,49,42,37,10,100,1,20,57,94,60,50,40,30,17,9};
 		
 		
 		// Initial pets 1-6
@@ -42,9 +42,9 @@ public class VirtualPetShelterApp {
 				System.out.println(currentPet.name + "\t|" + currentPet.hunger + "\t|" + currentPet.thirst + "\t|"
 						+ currentPet.mood + "\t");
 			}
+			
 			System.out.println("\nWhat would you like to do next?");
-			System.out.println(
-					"\n1. Feed the pets \n2. Water the pets \n3. Feed a pet \n4. Play with a pet \n5. Adopt a pet \n6. Admit a pet \n7. Do nothing \n8. Quit");
+			System.out.println("\n1. Feed the pets \n2. Water the pets \n3. Feed a pet \n4. Play with a pet \n5. Adopt a pet \n6. Admit a pet \n7. Do nothing \n8. Quit");
 			String response = input.nextLine();
 			switch (response) {
 			
@@ -66,8 +66,8 @@ public class VirtualPetShelterApp {
 				System.out.println();
 				showPets(shelter);
 				String petfeed = input.nextLine();
-				shelter.playWith(petfeed);
-				System.out.println("You have fed " + petfeed + ".");
+				shelter.feedPet(petfeed);
+				System.out.println("You give " + petfeed + " a tastey treat.");
 				break;
 				
 			// play
@@ -82,7 +82,7 @@ public class VirtualPetShelterApp {
 				
 			// adopt	
 			case "5": 
-				System.out.println("Adoption is a wonderful thing. Which pet are you interested in adopting?");
+				System.out.println("Which pet are you interested in adopting?");
 				showPets(shelter);
 				String petAdopt = input.nextLine();
 				VirtualPet x = shelter.getPet(petAdopt);
@@ -111,7 +111,7 @@ public class VirtualPetShelterApp {
 				System.exit(0);
 			
 			default:
-				System.out.println("Error: does not compute! Please enter ");
+				System.out.println("Error: does not compute! Please try again!");
 				break;
 			}
 			shelter.tick();
