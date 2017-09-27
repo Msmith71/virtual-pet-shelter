@@ -45,7 +45,7 @@ public class VirtualPetShelterApp {
 			}
 			
 			System.out.println("\nWhat would you like to do next?");
-			System.out.println("\n1. Feed all pets \n2. Water all pets \n3. Feed a single pet \n4. Feed a single pet \n5. Play with a pet \n6. Adopt a pet \n7. Admit a pet \n8. Do nothing \n9. Quit :(");
+			System.out.println("\n1. Feed all pets \n2. Water all pets \n3. Play with all pets \n4. feed a single pet \n5. Play with a pet \n6. Adopt a pet \n7. Admit a pet \n8. Do nothing \n9. Quit :(");
 			String response = input.nextLine();
 			switch (response) {
 			
